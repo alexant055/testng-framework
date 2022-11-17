@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -40,8 +41,13 @@ public class Base {
                 : properties.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
+            //create object of chrome options
+            ChromeOptions options = new ChromeOptions();
+            //add the headless argument
+            options.addArguments("headless");
+
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
