@@ -59,7 +59,7 @@ public class LoginTest extends Base {
 //        return new Object[][]{{map}, {mapNew}};
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir")
                 + "/src/main/resources/credentials.json");
-        return new Object[][]{{data.get(0)}, {data.get(1)}};
+        return new Object[][]{{data.get(0)}};
     }
 
     public void getScreenshot(String testCaseName) throws IOException {
