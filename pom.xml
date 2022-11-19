@@ -18,7 +18,10 @@
         <selenium-version>4.6.0</selenium-version>
         <testng-version>7.6.1</testng-version>
         <webdriver-manager-version>5.3.1</webdriver-manager-version>
-        <jackson-version>2.13.0</jackson-version>
+        <jackson-version>2.14.0</jackson-version>
+        <extent-report-version>5.0.9</extent-report-version>
+        <lombok-version>1.18.22</lombok-version>
+        <log4j2-version>2.19.0</log4j2-version>
     </properties>
 
     <dependencies>
@@ -42,6 +45,26 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extent-report-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2-version}</version>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -56,7 +79,7 @@
                             <version>3.0.0-M7</version>
                             <configuration>
                                 <suiteXmlFiles>
-                                    <suiteXmlFile>testsuites/smoke.xml</suiteXmlFile>
+                                    <suiteXmlFile>testsuite/smoke.xml</suiteXmlFile>
                                 </suiteXmlFiles>
                             </configuration>
                         </plugin>
@@ -74,7 +97,7 @@
                             <version>3.0.0-M7</version>
                             <configuration>
                                 <suiteXmlFiles>
-                                    <suiteXmlFile>testsuites/regression.xml</suiteXmlFile>
+                                    <suiteXmlFile>testsuite/regression.xml</suiteXmlFile>
                                 </suiteXmlFiles>
                             </configuration>
                         </plugin>

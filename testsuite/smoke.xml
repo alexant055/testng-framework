@@ -6,7 +6,9 @@
             <include name="Login"/>
         </run>
     </groups>
-
+    <listeners>
+        <listener class-name="com.automation.helpers.TestListeners" />
+    </listeners>
     <test name="Login-Test">
         <classes>
             <class name="com.automation.test.LoginTest"/>
